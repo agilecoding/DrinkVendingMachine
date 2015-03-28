@@ -2,14 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>BDDInAction</groupId>
-  <artifactId>VendingMachine</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <groupId>com.learn.bdd.VendinMachine</groupId>
+  <artifactId>DrinkVendingMachine</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>VendingMachine</name>
-  <url>http://maven.apache.org</url>
 
-   <profiles>
+  <name>DrinkVendingMachine</name>
+  <url>http://maven.apache.org</url>
+  <profiles>
 	        <profile>
 	            <id>standard-jdk</id>
 	            <activation>
@@ -32,61 +32,49 @@
 	                <tools-jar>${java.home}/../Classes/classes.jar</tools-jar>
 	            </properties>
 	        </profile>
-   </profiles>
+  </profiles>
   
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
- 	<spring.version>3.2.4.RELEASE</spring.version>
  	<cucumber-jvm.version>1.2.0</cucumber-jvm.version>
- 	<java.version>1.6</java.version>	
+ 	<java.version>1.6</java.version>
+ 	<spring.version>3.2.4.RELEASE</spring.version>
   </properties>
-  
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
+  <dependencies>
+	    <dependency>
 			<groupId>junit</groupId>
-			<artifactId>junit-dep</artifactId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 			<version>4.11</version>
 		</dependency>
-        <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.7</version>
-		</dependency>
- <!-- Cucumber Jars -->
+		<dependency>
+	            <groupId>org.easytesting</groupId>
+	            <artifactId>fest-assert</artifactId>
+	            <version>1.4</version>
+	    </dependency>
+	<!-- Cucumber Jars -->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber-jvm.version}</version>
             <scope>test</scope>
         </dependency>
-       <dependency>
+        <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>${cucumber-jvm.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
+         </dependency>
+         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber-jvm.version}</version>
             <scope>test</scope>
-        </dependency>
-<!-- Spring Framework Jars -->        
+         </dependency>
+         <!-- Spring jars -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -122,37 +110,35 @@
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
         </dependency>
- <!-- hsqldb Jar-->     
+        <!-- in memory hsqldb jar -->
         <dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>2.3.2</version>
 		</dependency>
-    </dependencies>
- 
-  <build>
-  		<defaultGoal>install</defaultGoal>
+  </dependencies>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
 		<testResources>
 		  <testResource>
 		    <directory>${project.basedir}/src/test/java</directory>
 		  </testResource>
 		  <testResource>
 		    <directory>${project.basedir}/src/test-userAcceptance/java</directory>
-		  </testResource>	
+		  </testResource>		  
 		  <testResource>
 		    <directory>${project.basedir}/src/test-userAcceptance/resources</directory>
-		  </testResource>		  	
+		  </testResource>	
 		  <testResource>
 		    <directory>${project.basedir}/src/test-integration/java</directory>
-		  </testResource>	 
-		  <testResource>
+		  </testResource>	
+	      <testResource>
 		    <directory>${project.basedir}/src/test-integration/resources</directory>
-		  </testResource>	 
+		  </testResource>	  
 		</testResources>
-<!--<pluginManagement> -->
-<!-- http://mojo.codehaus.org/cobertura-maven-plugin/usage.html -->
 		<plugins>
-			<plugin>
+		   <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.6</version>
@@ -165,21 +151,22 @@
                         <systemPath>${tools-jar}</systemPath>
                     </dependency>       
                 </dependencies>
-            </plugin>		
-		  	<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-compiler-plugin</artifactId>
-		        <version>3.2</version>
-		        <configuration>
-		               <verbose>true</verbose>
-		               <encoding>UTF-8</encoding>
-		               <source>${java.version}</source>
-		               <target>${java.version}</target>
-		               <showWarnings>true</showWarnings>
-		               <compilerArgument>-Werror</compilerArgument>
-		        </configuration>
-		    </plugin>  
-		    <plugin>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<compilerArguments>
+						<Xlint />
+					</compilerArguments>
+					<verbose>true</verbose>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.13</version>
@@ -189,7 +176,7 @@
 					</includes>
 				</configuration>
 			</plugin>
-		<!-- Cobertura plugin-->
+	<!-- Cobertura plugin-->
 			<plugin>
 		        <groupId>org.codehaus.mojo</groupId>
 		        <artifactId>cobertura-maven-plugin</artifactId>
@@ -197,20 +184,12 @@
 		        <configuration>
 		          <instrumentation>
 		            <ignores>
-		              <ignore>com.learn.bdd.UserAcceptanceTest.*</ignore> 
-		          <!--<ignore>GludeCode.*</ignore>  -->
-		              <ignore>com.learn.bdd.UnitTest.*</ignore>
-		              <ignore>com.learn.bdd.IntegrationTest.*</ignore>
+		              <ignore>learn.bdd.java.runner*</ignore>
+		              <ignore>learn.bdd.java.stepdef*</ignore>
 		            </ignores>
 		            <excludes>
-		             <exclude>com/learn/bdd/UserAcceptanceTest/**/*.class</exclude>
-		  <!--       <exclude>GludeCode/DrinkServiceStub.class</exclude> --> 
-		             <exclude>com/learn/bdd/UnitTest/**/*.class</exclude>
-		             <exclude>com/learn/bdd/IntegrationTest/**/*.class</exclude>	
-		<!--         <exclude>com/learn/bdd/VendingMachine/Drink.class</exclude>	
-		             <exclude>com/learn/bdd/VendingMachine/DrinkService.class</exclude> 
-		             <exclude>com/learn/bdd/VendingMachine/DrinkServiceImpl.class</exclude>  
-		             <exclude>com/learn/bdd/VendingMachine/DrinkInventory.class</exclude>   -->   
+		             <exclude>learn/bdd/java/runner/**/*.class</exclude>
+		              <exclude>learn/bdd/java/stepdef/**/*Test.class</exclude> 
 		            </excludes>
 		          </instrumentation>
 		        </configuration>
@@ -238,7 +217,7 @@
 		            <regexes>
 		            <!-- com.example.reallyimportant.* -->
 		              <regex>
-		                <pattern>com.learn.bdd.VendingMachine</pattern>
+		                <pattern>learn.bdd.java.*</pattern>
 		                <branchRate>90</branchRate>
 		                <lineRate>80</lineRate>
 		              </regex>
@@ -260,25 +239,33 @@
 		        </executions>
          </plugin>			
 		</plugins>
-	</build>  
-    <reporting>
+	</build>
+	
+	<reporting>
 		<plugins>
+			<!-- Cobertura report plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.16</version>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.6</version>
 				<configuration>
-					<aggregate>true</aggregate>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
 				</configuration>
 			</plugin>
+		 
+			<!--  integrate maven-cobertura-plugin to project site  -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.1</version>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.6</version>
 				<configuration>
-					<aggregate>true</aggregate>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
 				</configuration>
 			</plugin>
 		</plugins>
 	</reporting>	
+
 </project>
