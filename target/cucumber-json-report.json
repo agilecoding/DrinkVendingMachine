@@ -14,7 +14,7 @@
         "steps": [
           {
             "result": {
-              "duration": 114376000,
+              "duration": 138026000,
               "status": "passed"
             },
             "name": "stock for \u003cDrink\u003e exist",
@@ -70,7 +70,7 @@
         "steps": [
           {
             "result": {
-              "duration": 535000,
+              "duration": 554000,
               "status": "passed"
             },
             "name": "User puts in exact change for the price and selects the drink",
@@ -82,7 +82,7 @@
           },
           {
             "result": {
-              "duration": 2303000,
+              "duration": 3564000,
               "status": "passed"
             },
             "name": "Vending Machine should deliver the requested drink",
@@ -94,7 +94,7 @@
           },
           {
             "result": {
-              "duration": 34000,
+              "duration": 42000,
               "status": "passed"
             },
             "name": "the stock for the drink must be auto decremented",
@@ -115,7 +115,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1544000,
+              "duration": 1506000,
               "status": "passed"
             },
             "name": "stock for \u003cDrink\u003e exist",
@@ -177,7 +177,7 @@
         "steps": [
           {
             "result": {
-              "duration": 466000,
+              "duration": 447000,
               "status": "passed"
             },
             "name": "User wants to buy an invalid \u003cDrink\u003e",
@@ -207,7 +207,7 @@
           },
           {
             "result": {
-              "duration": 2848000,
+              "duration": 3592000,
               "status": "passed"
             },
             "name": "Vending Machine should alert the user with exception \"invalid drink\"",
@@ -234,7 +234,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1566000,
+              "duration": 1650000,
               "status": "passed"
             },
             "name": "stock for \u003cDrink\u003e exist",
@@ -296,7 +296,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2417000,
+              "duration": 1720000,
               "status": "passed"
             },
             "name": "User puts in \"lesser amount\" than the price and selects the \u003cDrink\u003e",
@@ -348,7 +348,7 @@
           },
           {
             "result": {
-              "duration": 95000,
+              "duration": 67000,
               "status": "passed"
             },
             "name": "Vending Machine should alert the user with exception \"insufficient funds\"",
@@ -375,7 +375,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1660000,
+              "duration": 1651000,
               "status": "passed"
             },
             "name": "stock for \u003cDrink\u003e exist",
@@ -437,7 +437,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3604000,
+              "duration": 1381000,
               "status": "passed"
             },
             "name": "User puts in \"greater amount\" than the price and selects the \u003cDrink\u003e",
@@ -489,7 +489,7 @@
           },
           {
             "result": {
-              "duration": 62000,
+              "duration": 56000,
               "status": "passed"
             },
             "name": "Vending Machine should alert the user with exception \"exact funds needed\"",
