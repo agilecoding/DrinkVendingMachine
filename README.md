@@ -13,5 +13,3 @@ BDD Steps:
 6.	Write the minimum Glue code to implement the Step definition class to pass the feature file -Green
 7.	Refactor the feature file, Step Definitions, Glue Code –Yellow
 8.	Re-run the feature file and see everything pass - Green
-
-Note: Project was comitted in stages corresponding to Steps 1 - 8
