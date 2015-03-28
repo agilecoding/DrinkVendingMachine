@@ -56,7 +56,7 @@ formatter.match({
   "location": "VendingMachineSteps.stock_for_Drink_exist(DataTable)"
 });
 formatter.result({
-  "duration": 138026000,
+  "duration": 81347000,
   "status": "passed"
 });
 formatter.scenario({
@@ -86,21 +86,21 @@ formatter.match({
   "location": "VendingMachineSteps.user_puts_in_exact_change_for_the_price_and_selects_the_drink()"
 });
 formatter.result({
-  "duration": 554000,
+  "duration": 460000,
   "status": "passed"
 });
 formatter.match({
   "location": "VendingMachineSteps.vending_Machine_should_deliver_the_requested_drink()"
 });
 formatter.result({
-  "duration": 3564000,
+  "duration": 271000,
   "status": "passed"
 });
 formatter.match({
   "location": "VendingMachineSteps.the_stock_for_the_drink_must_be_auto_decremented()"
 });
 formatter.result({
-  "duration": 42000,
+  "duration": 25000,
   "status": "passed"
 });
 formatter.background({
@@ -153,7 +153,7 @@ formatter.match({
   "location": "VendingMachineSteps.stock_for_Drink_exist(DataTable)"
 });
 formatter.result({
-  "duration": 1506000,
+  "duration": 1121000,
   "status": "passed"
 });
 formatter.scenario({
@@ -202,7 +202,7 @@ formatter.match({
   "location": "VendingMachineSteps.user_wants_to_buy_an_invalid_drink(DataTable)"
 });
 formatter.result({
-  "duration": 447000,
+  "duration": 446000,
   "status": "passed"
 });
 formatter.match({
@@ -215,7 +215,7 @@ formatter.match({
   "location": "VendingMachineSteps.vending_Machine_should_alert_the_user_with_exception(String)"
 });
 formatter.result({
-  "duration": 3592000,
+  "duration": 2213000,
   "status": "passed"
 });
 formatter.background({
@@ -268,7 +268,7 @@ formatter.match({
   "location": "VendingMachineSteps.stock_for_Drink_exist(DataTable)"
 });
 formatter.result({
-  "duration": 1650000,
+  "duration": 1123000,
   "status": "passed"
 });
 formatter.scenario({
@@ -339,7 +339,7 @@ formatter.match({
   "location": "VendingMachineSteps.user_puts_in_than_the_price_and_selects_the_Drink(String,DataTable)"
 });
 formatter.result({
-  "duration": 1720000,
+  "duration": 1267000,
   "status": "passed"
 });
 formatter.match({
@@ -352,7 +352,7 @@ formatter.match({
   "location": "VendingMachineSteps.vending_Machine_should_alert_the_user_with_exception(String)"
 });
 formatter.result({
-  "duration": 67000,
+  "duration": 50000,
   "status": "passed"
 });
 formatter.background({
@@ -405,7 +405,7 @@ formatter.match({
   "location": "VendingMachineSteps.stock_for_Drink_exist(DataTable)"
 });
 formatter.result({
-  "duration": 1651000,
+  "duration": 1206000,
   "status": "passed"
 });
 formatter.scenario({
@@ -476,7 +476,7 @@ formatter.match({
   "location": "VendingMachineSteps.user_puts_in_than_the_price_and_selects_the_Drink(String,DataTable)"
 });
 formatter.result({
-  "duration": 1381000,
+  "duration": 1315000,
   "status": "passed"
 });
 formatter.match({
@@ -489,7 +489,7 @@ formatter.match({
   "location": "VendingMachineSteps.vending_Machine_should_alert_the_user_with_exception(String)"
 });
 formatter.result({
-  "duration": 56000,
+  "duration": 44000,
   "status": "passed"
 });
 });
