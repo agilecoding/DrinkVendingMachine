@@ -47,7 +47,12 @@
 	    <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit-dep</artifactId>
 			<version>4.11</version>
 		</dependency>
 		<dependency>
@@ -55,6 +60,11 @@
 	            <artifactId>fest-assert</artifactId>
 	            <version>1.4</version>
 	    </dependency>
+	    <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.7</version>
+		</dependency>
 	<!-- Cucumber Jars -->
         <dependency>
             <groupId>info.cukes</groupId>
@@ -157,9 +167,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.2</version>
 				<configuration>
-					<compilerArguments>
-						<Xlint />
-					</compilerArguments>
+				    <encoding>UTF-8</encoding>
+					<compilerArgument>-Werror</compilerArgument>
 					<verbose>true</verbose>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -169,12 +178,57 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.13</version>
+				<version>2.16</version>
 				<configuration>
 					<includes>
 					 	<include>**/*Test.java</include>
 					</includes>
 				</configuration>
+<!-- 
+				<executions>	
+					<execution>
+			          <id>unit-tests</id>
+			          <phase>test</phase>
+			          <goals>
+			             <goal>test</goal>
+			          </goals>
+			          <configuration>
+			             <skip>false</skip>
+			             <includes>
+			                <include>**/*Test.java</include>
+			             </includes>
+			             <excludes>
+			                <exclude>**/*IntegrationTest.java</exclude>
+			            </excludes>
+			          </configuration>					
+					</execution>		
+			        <execution>
+			          <id>integration-test</id>
+			          <phase>integration-test</phase>
+			          <goals>
+			            <goal>test</goal>
+			          </goals>
+			          <configuration>
+			            <skip>false</skip>
+			            <includes>
+			              <include>com/learn/bdd/IntegrationTest/*Test.java</include>
+			            </includes>
+			          </configuration>
+			        </execution>
+			        <execution>
+			          <id>userAcceptance-test</id>
+			          <goals>
+			            <goal>test</goal>
+			          </goals>
+			          <phase>userAcceptance-test</phase>
+			          <configuration>
+			            <includes>
+			              <include>com/learn/bdd/UserAcceptanceTest/TestRunner.java</include>
+			            </includes>
+			          </configuration>
+			        </execution>
+			      </executions>
+-->
 			</plugin>
 	<!-- Cobertura plugin-->
 			<plugin>
@@ -243,6 +297,22 @@
 	
 	<reporting>
 		<plugins>
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
 			<!-- Cobertura report plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
