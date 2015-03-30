@@ -297,7 +297,7 @@
 		            <param>com.learn.bdd.VendingMachine*</param>
 		        </targetClasses>
 		        <targetTests>
-		            <param>com.learn.bdd.*Test</param>
+		            <param>*Test</param>
 		        </targetTests>
 		        <mutators>
 				  <mutator>DEFAULTS</mutator>
