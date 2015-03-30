@@ -1,4 +1,4 @@
-package com.learn.bdd.IntegrationTest;
+package integrationTest;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -35,7 +35,7 @@ public class DrinkServiceImplTest
 	@Test
 	public void checkPriceOfDrinkJuice()
 	{
-		DrinkService drinkService = new DrinkServiceImpl(dataSource);
+		DrinkService drinkService = new DrinkServiceImpl(dataSource);	
 		List<BigDecimal> drinks = drinkService.fetchPrice("juice");
 		BigDecimal price = drinks.get(0);
 		assertThat(price).isEqualTo(new BigDecimal(1.50).setScale(2));
@@ -44,7 +44,7 @@ public class DrinkServiceImplTest
 	@Test
 	public void checkPriceOfDrinkSoftDrink()
 	{
-		DrinkService drinkService = new DrinkServiceImpl(dataSource);
+		DrinkService drinkService = new DrinkServiceImpl(dataSource);	
 		List<BigDecimal> drinks = drinkService.fetchPrice("softdrink");
 		BigDecimal price = drinks.get(0);
 		assertThat(price).isEqualTo(new BigDecimal(1.25).setScale(2));
@@ -54,7 +54,7 @@ public class DrinkServiceImplTest
 	public void checkStockOfDrinkWater()
 	{
 		DrinkService drinkService = new DrinkServiceImpl(dataSource);
-		VendingMachine vendingMachineService = new VendingMachineImpl(drinkService);
+		VendingMachine vendingMachineService = new VendingMachineImpl(drinkService);	
 		Integer stock =  vendingMachineService.checkStock("water");
 		assertThat(stock).isEqualTo(20);
 	}

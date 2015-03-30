@@ -1,4 +1,4 @@
-package com.learn.bdd.UserAcceptanceTest;
+package featureStepDefinitions;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.is;

@@ -1,4 +1,4 @@
-package com.learn.bdd.UnitTest;
+package unitTest;
 
 import static org.fest.assertions.Assertions.assertThat;
 
