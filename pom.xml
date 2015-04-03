@@ -39,7 +39,7 @@
 	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
  	<cucumber-jvm.version>1.2.0</cucumber-jvm.version>
- 	<java.version>1.6</java.version>
+ 	<java.version>1.7</java.version>
  	<spring.version>3.2.4.RELEASE</spring.version>
   </properties>
 
@@ -225,7 +225,7 @@
                     <dependency>
                         <groupId>com.sun</groupId>
                         <artifactId>tools</artifactId>
-                        <version>1.6</version>
+                        <version>1.7</version>
                         <scope>system</scope>
                         <systemPath>${tools-jar}</systemPath>
                     </dependency>       
@@ -233,12 +233,14 @@
 		        <configuration>
 		          <instrumentation>
 		            <ignores>
-		              <ignore>learn.bdd.java.runner*</ignore>
-		              <ignore>learn.bdd.java.stepdef*</ignore>
+		              <ignore>GludeCode*</ignore>
+		              <ignore>featureStepDefinitions*</ignore>
 		            </ignores>
 		            <excludes>
-		             <exclude>learn/bdd/java/runner/**/*.class</exclude>
-		             <exclude>learn/bdd/java/stepdef/**/*Test.class</exclude> 
+		             <exclude>GludeCode/**/*.class</exclude>
+		             <exclude>featureStepDefinitions/**/*.class</exclude> 
+		             <exclude>*Test/**/*.class</exclude> 
+		             <exclude>com/learn/bdd/VendingMachine/**/Drink*.class</exclude>		             
 		            </excludes>
 		          </instrumentation>
 		        </configuration>
@@ -266,12 +268,12 @@
 		            <regexes>
 		            <!-- com.example.reallyimportant.* -->
 		              <regex>
-		                <pattern>learn.bdd.java.*</pattern>
+		                <pattern>com.learn.bdd.VendingMachine*</pattern>
 		                <branchRate>90</branchRate>
 		                <lineRate>80</lineRate>
 		              </regex>
 		              <regex>
-		                <pattern>com.example.boringcode.*</pattern>
+		                <pattern>com.learn.bdd.VendingMachine.Drink*</pattern>
 		                <branchRate>40</branchRate>
 		                <lineRate>30</lineRate>
 		              </regex>
