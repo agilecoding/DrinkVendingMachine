@@ -14,8 +14,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import GludeCode.DrinkServiceStub;
-import GludeCode.VendingMachineStub;
+import glueCode.DrinkServiceStub;
+import glueCode.VendingMachineStub;
 
 import com.learn.bdd.VendingMachine.Drink;
 import com.learn.bdd.VendingMachine.DrinkInventory;
