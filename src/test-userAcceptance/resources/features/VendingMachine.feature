@@ -11,11 +11,13 @@ Given stock for <Drink> exist
 	|softdrink| 10   | 1.25 |
 	|juice    | 15   | 1.50 |
 
+@positive
 Scenario: Buy any valid drink for the exact price displayed on vending machine
 When User puts in exact change for the price and selects the drink
 Then Vending Machine should deliver the requested drink
 And the stock for the drink must be auto decremented
 
+@negative
 @BuyAnInvalidDrinkFromVendingMachine
 Scenario: Buy an invalid drink from vending machine
 When User wants to buy an invalid <Drink>
@@ -23,6 +25,7 @@ When User wants to buy an invalid <Drink>
 		| vitamindrink | 8    |  2.00 |
 Then Vending Machine should alert the user with exception "invalid drink"
 
+@negative
 @BuyAValidDrinkForLessAmountThanPrice
 Scenario: Buy a valid drink for lesser amount than the expected price
 When User puts in "lesser amount" than the price and selects the <Drink>	
@@ -32,6 +35,7 @@ When User puts in "lesser amount" than the price and selects the <Drink>
 	|juice    | 15   | 1.25 |
 Then Vending Machine should alert the user with exception "insufficient funds"
 
+@negative
 @BuyAValidDrinkForMoreAmountThanPrice
 Scenario: Buy a valid drink for more amount than the expected price
 When User puts in "greater amount" than the price and selects the <Drink>	

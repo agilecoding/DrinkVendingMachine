@@ -1,16 +1,15 @@
 package unitTest;
 
 import static org.fest.assertions.Assertions.assertThat;
-
+import glueCode.DrinkServiceStub;
 import java.math.BigDecimal;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import GludeCode.DrinkServiceStub;
 import com.learn.bdd.VendingMachine.VendingMachineImpl;
-
 
 public class VendingMachineTest{
 	

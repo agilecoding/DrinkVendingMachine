@@ -6,6 +6,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import glueCode.DrinkServiceStub;
+import glueCode.VendingMachineStub;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,9 +15,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import glueCode.DrinkServiceStub;
-import glueCode.VendingMachineStub;
 
 import com.learn.bdd.VendingMachine.Drink;
 import com.learn.bdd.VendingMachine.DrinkInventory;
